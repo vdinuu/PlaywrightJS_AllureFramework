@@ -9,8 +9,12 @@
     "open:reports": "npx allure open ./allure-report",
     "pretest": "npm install && .\\node_modules\\.bin\\playwright.cmd install --force && npm run clean:reports",
     "posttest": "npm run generate:reports",
-    "execute:script": "npx playwright test --project=chromium",
-    "test": "npm run execute:script || npm run posttest"
+    "execute:chromium": "npx playwright test --project=chromium",
+    "execute:firefox": "npx playwright test --project=firefox",
+    "execute:webkit": "npx playwright test --project=webkit",
+    "test:chromium": "npm run execute:chromium || npm run posttest",
+    "test:firefox": "npm run execute:firefox || npm run posttest",
+    "test:webkit": "npm run execute:webkit || npm run posttest"
   },
   "keywords": [],
   "author": "",

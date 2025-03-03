@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    parameters {
+        choice(name: 'Browser', choices: ['chromium', 'firefox', 'webkit'], description: "Select the browser to be used for test execution")
+//        string(name: 'TAG', defaultValue: "AddPlace", description: 'Enter the tag you want to use for execution')
+    }
+
     stages {
         stage('GIT Checkout') {
             steps {
@@ -14,7 +19,7 @@ pipeline {
             steps {
                 echo '*********Executing test cases**********'
                 bat '''
-                    npm run test
+                    npm run test:${params.Browser}
                     '''
             }
         }
