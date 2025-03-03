@@ -5,7 +5,7 @@ pipeline {
         stage('GIT Checkout') {
             steps {
                 echo '*********Git checkout code*********'
-                git branch: 'develop',
+                git branch: 'master',
                         credentialsId: 'GitHub_643',
                         url: 'https://github.com/vdinuu/PlaywrightJS_AllureFramework.git'
             }
