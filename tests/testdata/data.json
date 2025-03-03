@@ -1,0 +1,17 @@
+{
+    "userCredentials": {
+        "email": "vdinuu@gmail.com",
+        "password": "Automate@643"
+    },
+    "purchaseProduct":{
+        "productName": "Macbook",
+        "firstName": "Denver",
+        "lastName": "Peter",
+        "Company": "Infopark",
+        "Address": "Street road 1",
+        "City": "Nagercoil",
+        "PostCode": "674273",
+        "Country": "India",
+        "State": "Tamil Nadu"
+    }
+}
