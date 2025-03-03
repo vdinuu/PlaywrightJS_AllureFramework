@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        choice(name: 'Browser', choices: ['chromium', 'firefox', 'webkit'], description: "Select the browser to be used for test execution")
+        choice(name: 'BROWSER_NAME', choices: ['chromium', 'firefox', 'webkit'], description: "Select the browser to be used for test execution")
 //        string(name: 'TAG', defaultValue: "AddPlace", description: 'Enter the tag you want to use for execution')
     }
 
@@ -18,9 +18,7 @@ pipeline {
         stage('Execute test cases') {
             steps {
                 echo '*********Executing test cases**********'
-                bat '''
-                    npm run test:${params.Browser}
-                    '''
+                bat "npm run test:${params.BROWSER_NAME}"
             }
         }
         stage('Publish HTML Report') {
